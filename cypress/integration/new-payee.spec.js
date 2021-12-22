@@ -20,9 +20,7 @@ describe('New Payee test', () => {
       const username = user.username
       const password = user.password
 
-      cy.get('#user_login').type(username)
-      cy.get('#user_password').type(password)
-      cy.contains('Sign in').click()
+      cy.login(username, password)
 
       cy.url().should('include', 'account-summary')
     })
