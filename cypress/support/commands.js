@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//login user to zero webappsecurity app
+Cypress.Commands.add('login', (username, password) => {
+  cy.get('#user_login').type(username)
+  cy.get('#user_password').type(password)
+  cy.contains('Sign in').click()
+})
