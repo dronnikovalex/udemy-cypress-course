@@ -23,7 +23,7 @@ describe('It tests curency exchange', () => {
 
     cy.log('**fill the form**')
     cy.get('#pc_currency').select('CHF')
-    cy.get('input[name="amount"]').type(1000)
+    cy.get('input[name="amount"]').last().type(1000)
     cy.get('#pc_inDollars_true').check()
     cy.get('#pc_calculate_costs').click()
 

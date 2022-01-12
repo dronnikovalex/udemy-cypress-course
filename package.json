@@ -4,7 +4,8 @@
   "description": "This is udemy cypress course",
   "main": "index.js",
   "scripts": {
-    "cy:run-tests": "cypress run --spec cypress/integration/visual-testing/*",
+    "cy-run-tests": "cypress run --spec cypress/integration/*.spec.js",
+    "cy:run-visual-tests": "cypress run --spec cypress/integration/visual-testing/*",
     "cy:update-snapshots": "cypress run --env updateSnapshots=true --spec cypress/integration/visual-testing/*",
     "cy:percy": "npx percy exec -- cypress run --spec cypress/integration/percy/*"
   },
