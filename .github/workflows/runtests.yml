@@ -1,0 +1,19 @@
+name: Cypress functional tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2.9.7
+        with:
+          spec: |
+            cypress/integration/*.spec.js
