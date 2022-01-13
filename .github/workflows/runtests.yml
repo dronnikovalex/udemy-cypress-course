@@ -2,11 +2,11 @@ name: Cypress functional tests
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '* 22 * 1-5'
   push:
     branches:
       - master
+  schedule:
+    - cron: '0 22 * * 1-5'
 
 jobs:
   cypress-run:
