@@ -4,21 +4,28 @@
   "description": "This is udemy cypress course",
   "main": "index.js",
   "scripts": {
+    "cy:open": "cypress open",
     "cy-run-tests": "cypress run --spec cypress/integration/*.spec.js",
     "cy:run-visual-tests": "cypress run --spec cypress/integration/visual-testing/*",
     "cy:update-snapshots": "cypress run --env updateSnapshots=true --spec cypress/integration/visual-testing/*",
-    "cy:percy": "npx percy exec -- cypress run --spec cypress/integration/percy/*"
+    "cy:percy": "npx percy exec -- cypress run --spec cypress/integration/percy/*",
+    "cy-bdd-open": "npm run cy:open -- --config-file bdd.json"
   },
   "author": "Alex Dronnikov",
   "license": "ISC",
   "dependencies": {
     "@percy/cypress": "^3.1.1",
     "cypress": "^9.2.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-image-snapshot": "^4.0.1",
-    "faker": "^5.5.3"
+    "faker": "^5.5.3",
+    "prettier": "^2.5.1"
   },
   "devDependencies": {
     "@percy/cli": "^1.0.0-beta.71",
     "cypress-network-idle": "^1.3.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }

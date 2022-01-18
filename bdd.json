@@ -1,0 +1,5 @@
+{
+  "testFiles": "**/*.{feature,features}",
+  "watchForFileChanges": false,
+  "video": false
+}
