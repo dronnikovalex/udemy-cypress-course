@@ -1,4 +1,7 @@
 {
+  "env": {
+    "zeroBankApp": "http://zero.webappsecurity.com/index.html"
+  },
   "testFiles": "**/*.{feature,features}",
   "watchForFileChanges": false,
   "video": false
