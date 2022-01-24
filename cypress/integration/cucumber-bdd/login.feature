@@ -5,6 +5,8 @@ Feature: Login to App
 
   Scenario: I want to login into the app with correct data
     Given I open the homepage
+    And I want to wait 2000 milliseconds
+    And I should see "Zero - Log in" title
     When I fill username with "username"
     And I fill password with "password"
     And I submit form
@@ -12,6 +14,7 @@ Feature: Login to App
   # @focus - only this scenario will run
   Scenario: I want to login into the app with wrong login data
     Given I open the homepage
+    And I want to reload page
     When I fill username with "fakeusername"
     And I fill password with "fakepassword"
     And I submit form
