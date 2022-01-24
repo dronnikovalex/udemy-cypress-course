@@ -6,13 +6,22 @@ Given('I open the homepage', () => {
   LoginPage.visit()
 })
 
+When('I fill username with {string}', username => {
+  LoginPage.fillLogin(username)
+})
+
+When('I fill password with {string}', password => {
+  LoginPage.fillPassword(password)
+})
+
 When('I submit form', () => {
-  cy.fixture('user').then(({ username, password }) => {
-    LoginPage.fillForm(username, password)
-    LoginPage.submitForm()
-  })
+  LoginPage.submitForm()
 })
 
 Then('I see homepage', () => {
   cy.url().should('include', 'account-summary')
+})
+
+Then('I see error', () => {
+  LoginPage.getErrorMessage()
 })
